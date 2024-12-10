@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://dovd61h7i3u32"]
+
+[ext_resource type="Script" path="res://Source/Scene/MainScene.cs" id="1_dytad"]
+[ext_resource type="PackedScene" uid="uid://lspado3601xi" path="res://Source/Player/player.tscn" id="1_uo4hl"]
+[ext_resource type="PackedScene" uid="uid://c4rmmaqlwlstw" path="res://Source/Ball/ball.tscn" id="2_otjr6"]
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_dytad")
+
+[node name="Ball" parent="." instance=ExtResource("2_otjr6")]
+
+[node name="Player1" parent="." instance=ExtResource("1_uo4hl")]
+
+[node name="Player2" parent="." instance=ExtResource("1_uo4hl")]
+position = Vector2(1000, 0)
+
+[node name="Sprite2D" parent="Player2" index="0"]
+frame = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("../Camera2D")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TitleScreen" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.5
+offset_top = -33.0
+offset_right = 53.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/TitleScreen"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "PONG"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="SinglePlayerButton" type="Button" parent="CanvasLayer/TitleScreen"]
+layout_mode = 2
+text = "Single Player"
+
+[node name="TwoPlayerButton" type="Button" parent="CanvasLayer/TitleScreen"]
+layout_mode = 2
+text = "Two Players"
+
+[connection signal="ScoreIncrease" from="Ball" to="." method="_on_ball_score_increase"]
+[connection signal="pressed" from="CanvasLayer/TitleScreen/SinglePlayerButton" to="." method="_on_single_player_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TitleScreen/TwoPlayerButton" to="." method="_on_two_player_button_pressed"]
+
+[editable path="Player2"]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfkg8tra8arnl"]
+
+[ext_resource type="Script" path="res://Source/ScoreBoard/ScoreBoard.cs" id="1_r618i"]
+
+[node name="ScoreBoard" type="HBoxContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -101.5
+offset_right = 101.5
+offset_bottom = 40.0
+grow_horizontal = 2
+script = ExtResource("1_r618i")
+
+[node name="PlayerOne" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "PlayerOne  -  "
+
+[node name="PlayerOneScore" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "   :   "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerTwo" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "PlayerTwo  -  "
+
+[node name="PlayerTwoScore" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30

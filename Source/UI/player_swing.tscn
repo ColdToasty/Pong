@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://blo0a2olb8fbf"]
+
+[ext_resource type="Script" path="res://Source/UI/PlayerSwing.cs" id="1_iqy4a"]
+
+[node name="PlayerSwing" type="VBoxContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.5
+offset_top = -88.0
+offset_right = 121.5
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("1_iqy4a")
+
+[node name="PlayerSwingLabel" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Press Space To Start"
+horizontal_alignment = 1
+vertical_alignment = 1
